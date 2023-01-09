@@ -1,0 +1,5 @@
+{
+  "Background": "https://demo-assets.pixotronics.com/pixo/presets/background/gradient-linear-antrasit.svg",
+  "Environment": "https://demo-assets.pixotronics.com/pixo/presets/environment/evening_meadow_1k.hdr",
+  "type": "PresetLibraryPlugin"
+}

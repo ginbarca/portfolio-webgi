@@ -7,13 +7,322 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 </head>
 
-<body>
-	<div id="webgi-canvas-container">
+<body cz-shortcut-listen="true" style="color: rgb(255, 255, 255); cursor: default;">
+	<!-- <div class="FakeScroll" style="height: 2544px;"></div> -->
+	<!-- <div class="gl"><canvas width="1920" height="718" style="width: 1920px; height: 718px;"></canvas></div> -->
+	<div id="webgi-canvas-container" class="gl">
 		<canvas id="webgi-canvas"></canvas>
 	</div>
+	<!-- <div class="Voile" style="background: rgb(46, 47, 47); opacity: 0.0132;"></div> -->
+	<div class="Menu">
+		<nav>
+			<a href="/about" data-id="About" data-route="about" class="null">About</a>
+			<a href="/works" data-id="Work" data-route="work" class="null">Work</a>
+			<a class="selected" href="/" data-id="Home" data-route="home" alt="home" title="home"><span class="Menu-invisible">Home</span><span class="gg-symbol gg-symbol--disc"></span></a>
+		</nav>
+	</div>
+	<!-- <div class="Container" style="position: fixed;">
+		<div class="Content" style="transform: translateY(-200px);">
+			<div class="Section Home">
+				<div class="Home-content">
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--3" style="opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--disc" style="opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--8 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--square" style="opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--2" style="opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--3" style="opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--disc" style="opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--8 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="gg"></div>
+					<div class="gg gg--indent">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--square" style="opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--2" style="opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="Title" style="opacity: 1; transform: translate(0px, 0px);">
+						<h1>Guillaume Gouessan</h1>
+						<h2>Creative Developer</h2>
+					</div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--disc" style="opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--4 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--2 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--9 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="gg"></div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--5 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--2 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--8 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="gg  gg-last">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--2 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--square" style="opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--2" style="opacity: 1; transform: translate(0px, 0px);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%); opacity: 1; transform: translate(0px, 0px);"></div>
+					</div>
+					<div class="Arrow" data-ref="arrow" style="transform: translate(0px, 0px); opacity: 1;"></div>
+				</div>
+			</div>
+			<div class="Section Work" style="opacity: 1; transform: translate(0px, 0px);">
+				<div class="Work-content">
+					<h3><span class="gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></span>Work</h3>
+					<ul class="Work-list">
+						<li>
+							<a class="WorkItem" data-src="edf.png" href="https://innovations.electricdays.fr/fr/marseillaise" target="_blank" rel="noopener">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">EDF</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">Electric Days</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="arte.png" href="https://ordesa.arte.tv/prequel/" target="_blank" rel="noopener">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Arte</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">Ordesa</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="louboutin.png" href="https://lexposition.christianlouboutin.com/" target="_blank" rel="noopener">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Louboutin</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">L'Exhibitionniste</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="adl.png" href="https://vimeo.com/383094187" target="_blank" rel="noopener">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">L'Atelier des Lumières</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">Immersive Art Festival</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="hki.png" href="https://hki.paris/" target="_blank" rel="noopener">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">HKI.Paris</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">Portfolio</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="knife.png" href="https://knifegame.hellohikimori.com/" target="_blank" rel="noopener">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Knife Game</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">HKI internal project</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="3mpp.png" href="http://3mpp.hki.paris/" target="_blank" rel="noopener">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">3 Mots pour Paris</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">With Les Cokau</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="france2.png" href="http://liberez-emilie.nouvelles-ecritures.francetv.fr/" target="_blank" rel="noopener">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">France TV</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">Libérez Émilie</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="hki.png" href="http://2018.hki.paris/" target="_blank" rel="noopener">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">HKI Best Wishes</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">New Year 2018</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+							</a>
+						</li>
+					</ul>
+					<h3><span class="gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);"></span>Lab</h3>
+					<ul class="Lab-list">
+						<li>
+							<a class="WorkItem" data-src="lab.png" href="/sketches/bonfire/" target="_blank" data-color="#924601">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Bonfire</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">Christmas Experiment</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="lab.png" href="/talk/move/" target="_blank" data-color="#FFFFFF">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Making things move</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">Talk slides</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="lab.png" href="/sketches/dancing-instances/" target="_blank" data-color="#D73535">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Dancing Instances</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">WebGL Experiment</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="lab.png" href="/sketches/drapeau/" target="_blank" data-color="#35D7CD">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Drapeau</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">WebGL Experiment</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="lab.png" href="/sketches/fur/" target="_blank" data-color="#D7A935">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Fur</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">WebGL Experiment</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="lab.png" href="/sketches/ecailles/" target="_blank" data-color="#524FFF">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Ecailles</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">WebGL Experiment</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="lab.png" href="/sketches/subsurface-scattering/" target="_blank" data-color="#53DD50">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Subsurface scattering</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">WebGL Experiment</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="lab.png" href="/sketches/tentacles/" target="_blank" data-color="#FFA800">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Tentacles</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">WebGL Experiment</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%);"></div>
+							</a>
+						</li>
+						<li>
+							<a class="WorkItem" data-src="lab.png" href="/talk/workshop/" target="_blank" data-color="#F083D2">
+								<div class="WorkItem-content">
+									<span class="WorkItem-title">Three.js Workshop</span>
+									<span class="WorkItem-dot"></span>
+									<span class="WorkItem-subtitle">Talk Slides</span>
+								</div>
+								<div class="WorkItem-roll gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+							</a>
+						</li>
+					</ul>
+					<div class="Arrow" data-ref="arrow" style="transform: translate(0px, 0px);opacity: 1;"></div>
+				</div>
+			</div>
+			<div class="Section About">
+				<div class="About-content">
+					<h3>Hi, I'm Guillaume.</h3>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--4 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+						<div class="gg-symbol gg-symbol--disc"></div>
+					</div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(242, 159, 255) 0%, rgb(124, 153, 255) 100%);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--2"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--6 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+					</div>
+					<p style="">I’m a creative devel<span style="">o</span>per / software engineer from France.<br>I <span style="">u</span>se Javascript, Typescript and Unity to create high-end interactive experiences and products.<br>I currently work as a senior software engineer at <a href="https://spline.design" target="_blank" rel="noopener">Spline</a>.<br>Previously <span style="">t</span>echnical lead at <a href="https://hki.paris" target="_blank" rel="noopener">Hellohikimori</a> and front-end developer at <a href="http://uzik.com" target="_blank" rel="noopener">Uzik</a> and <a href="http://www.trafik.fr/" target="_blank" rel="noopener">Trafik</a>.</p>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--2"></div>
+					</div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--rect gg-symbol--6 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(255, 218, 122) 0%, rgb(255, 105, 105) 100%);"></div>
+					</div>
+					<div class="gg">
+						<div class="gg-symbol gg-symbol--square"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--2"></div>
+						<div class="gg-symbol gg-symbol--rect gg-symbol--3 gg-symbol--gradient" style="background: linear-gradient(90deg, rgb(100, 145, 214) 0%, rgb(67, 240, 199) 100%);"></div>
+					</div>
+					<div class="Arrow Arrow--reversed" data-ref="arrow"></div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="Footer">
+		<ul>
+			<li><a href="mailto:guillaume.gouessan@gmail.com">Email</a></li>
+			<li><a href="https://github.com/superguigui" target="_blank" rel="noopener">Github</a></li>
+			<li><a href="https://www.linkedin.com/in/guillaumegouessan/" target="_blank" rel="noopener">Linkedin</a></li>
+			<li><a href="https://twitter.com/Superguigui" target="_blank" rel="noopener">Twitter</a></li>
+		</ul>
+	</div>
 
+	<!-- Libs -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/ScrollToPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
+
+	<!-- Scripts -->
+	<!-- <script src="/build.js"></script> -->
 	<script src="src/index.ts">
 	</script>
+
+	<daily-companion-app></daily-companion-app>
 </body>
 
 </html>
