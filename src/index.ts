@@ -32,7 +32,10 @@ import {
 	CameraUiPlugin,
 	PerspectiveCamera,
 	Vector3,
-	Vector2
+	Vector2,
+	OrthographicCamera,
+	MathUtils,
+	ObjectRotationPlugin
 
 	// Color, // Import THREE.js internals
 	// Texture, // Import THREE.js internals
@@ -103,26 +106,30 @@ async function setupViewer() {
 	await scene.addLight(displayLight);
 
 	// Config camera
-	// const cameraObj = new PerspectiveCamera();
-	// scene.activeCamera = viewer.createCamera(cameraObj);
-	// await scene.activeCamera.position.set(-0.1, 1.58, 2.38);
-	// await scene.activeCamera.positionUpdated();
-	// await scene.activeCamera.target.set(-0.18, 0.58, -0.10);
-	// await scene.activeCamera.targetUpdated();
-	const options = await scene.activeCamera.getCameraOptions();
+	const camera = scene.activeCamera;
+	const orbitControl = camera.controls;
+	orbitControl?.enabled = false;
+	orbitControl.autoRotate = false;
+	orbitControl.enableZoom = false;
+	const options = await camera.getCameraOptions();
 	options.zoom = 0.5;
 	options.position = [-0.1, 1.58, 2.38];
 	options.target = [-0.18, 0.58, -0.10];
-	viewer.scene.activeCamera.setCameraOptions(options);
-	const windowHalf = new Vector2( window.innerWidth / 2, window.innerHeight / 2 );
+	camera.setCameraOptions(options);
+	const windowHalf = new Vector2(window.innerWidth / 2, window.innerHeight / 2);
 	const mouse = new Vector2();
+	const target = new Vector2();
 
 	function onMouseMove(event: any) {
-		mouse.x = ( event.clientX - windowHalf.x );
-		mouse.y = ( event.clientY - windowHalf.y );
+		mouse.x = (event.clientX - windowHalf.x);
+		mouse.y = (event.clientY - windowHalf.y);
+		target.x = mouse.x * 0.001;
+		target.y = mouse.y * 0.001;
+		// options.target[1] += 0.05 * (target.x - options.target[1]);
+		options.target[0] += 0.05 * (target.x - options.target[0]);
+		camera.setCameraOptions(options);
 	}
-	await document.addEventListener( 'mousemove', onMouseMove, false );
-	// await scene.activeCamera.positionTargetUpdated();
+	document.addEventListener('mousemove', onMouseMove, false);
 
 	// This must be called once after all plugins are added.
 	viewer.renderer.refreshPipeline()
@@ -131,6 +138,18 @@ async function setupViewer() {
 
 	// Load an environment map if not set in the glb file
 	await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/evening_meadow_1k.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Chair_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Chair.Pied_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Room_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Desk.Drawers_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Desk.Handles_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Desk.Table_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Keyboard_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Lamp_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Moleskine_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Mouse_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Screen_baked.hdr', { generateMipmaps: false }));
+	// await scene.setEnvironment(await manager.importer!.importSinglePath<ITexture>('./assets/Screen.Frame_baked.hdr', { generateMipmaps: false }));
 
 	// Add some UI for tweak and testing.
 	const uiPlugin = await viewer.addPlugin(TweakpaneUiPlugin)
